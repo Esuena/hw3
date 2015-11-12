@@ -37,6 +37,8 @@ int main(){
    const int N = 100;
    double p[N];
    double mean, var;
+   
+   srand(time(NULL));//use current time as a seed value
 
    f1(p,N);
    
