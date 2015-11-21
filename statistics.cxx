@@ -7,29 +7,30 @@ using namespace std;
 // plenty of lines here
 //--------------------------------------------------
 
-int k;
-double Z;
-int rand();
-double sum1, sum2;
+//double Z;
+//int rand();
+//double sum1, sum2;
 //double mean, var;
 
 void f1(double* x, int N){
   for(int j=0; j<N; j++){
-    Z=(double) rand()/RAND_MAX;
-    x[j]=Z;
+    //Z=(double) rand()/RAND_MAX;
+    x[j]=(double) rand()/RAND_MAX;
   }
 }
 
 void MeanVar(double* x,int N, double& mean, double& var){
   for(int i=0;i<N;i++){
-    sum1+=x[i];
+    mean+=x[i];
   }
-  mean=sum1/N;
+  mean/=N;
+  //mean=sum1/N;
   
   for(int i=0;i<N;i++){
-    sum2+=pow((x[i]-mean),2);
+    var+=pow((x[i]-mean),2);
   }
-  var=sum2/N;
+  var/=N;
+  //var=sum2/N;
 }
 
 
